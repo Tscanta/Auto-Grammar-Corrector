@@ -66,13 +66,17 @@ def run_correction_worker(mode="grammar", original_text=None):
         print("❌ Correction failed.")
         return
 
-    replace_selected_text(corrected_text)
     total_time = time.perf_counter() - total_start
+
     # Hide the loading popup
     root.after(
         0,
         hide_loading
     )
+
+    time.sleep(0.1) # Give Tkinter a tiny moment to destroy the popup
+
+    replace_selected_text(corrected_text) # Paste the corrected text
 
 
     print()

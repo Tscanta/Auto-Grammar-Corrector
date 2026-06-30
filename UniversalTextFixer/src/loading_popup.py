@@ -33,7 +33,6 @@ def show_loading(mode):
     loading_window.resizable(False, False) # Cannot resize the window
     loading_window.attributes("-topmost", True) # Keep it above other windows
     loading_window.lift() # Making the window appear immediately
-    loading_window.focus_force()
 
     popup_width = 250
     popup_height = 140
@@ -85,7 +84,6 @@ def show_loading(mode):
         )
 
     loading_window.update_idletasks() # tells tkinter, "Finish laying out all the widgets first."
-    loading_window.update()
     animate_loading()
 
 

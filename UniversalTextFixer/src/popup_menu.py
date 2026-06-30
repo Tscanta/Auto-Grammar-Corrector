@@ -165,17 +165,6 @@ def show_popup(mouse_x,  mouse_y):
     )
     button_frame.pack()
 
-    # AI PROVIDER FRAME
-    provider_frame = tk.Frame(
-    window,
-    bg=BG
-    )
-
-    provider_frame.pack(
-        pady=(0, 15)
-    )
-
-
     # ---------------------------------------
     # List of all buttons
     #
@@ -237,23 +226,39 @@ def show_popup(mouse_x,  mouse_y):
                 b.config(bg=CARD)
         )
 
-        # Gemini Button
-        gemini_button = tk.Button(
-            provider_frame,
-            text="🟢 Gemini",
-        command=lambda: set_provider("gemini")
+    # AI PROVIDER FRAME
+    provider_frame = tk.Frame(
+        window,
+        bg=BG
         )
-        gemini_button.pack(
-            side="left",
+
+    provider_frame.pack(
+        pady=(0, 15)
+    )
+
+    # Gemini Button
+    gemini_button = tk.Button(
+        provider_frame,
+        text="🟣 Gemini",
+        command=lambda: (
+            print("Using Gemini"),
+            set_provider("gemini")
+        )
+    )
+    gemini_button.pack(
+        side="left",
+        padx=5
+    )
+    # OLLAMA BUTTON
+    ollama_button = tk.Button(
+        provider_frame,
+        text="⚫ Ollama",
+        command=lambda: (
+            print("Using Ollama"),
+            set_provider("ollama")
+        )
+    )
+    ollama_button.pack(
+        side="left",
             padx=5
-        )
-        # OLLAMA BUTTON
-        ollama_button = tk.Button(
-            provider_frame,
-            text="🔵 Ollama",
-            command=lambda: set_provider("ollama")
-        )
-        ollama_button.pack(
-            side="left",
-                padx=5
-        )
+    )

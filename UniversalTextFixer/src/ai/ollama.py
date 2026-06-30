@@ -16,6 +16,8 @@ from src.ai.config import OLLAMA_MODEL
 # --------------------------------------------------
 def correct_text(text, mode="grammar"):
 
+    print(f"Using Ollama model: {OLLAMA_MODEL}")
+
     # Check whether the requested mode exists
     if mode not in PROMPTS:
         raise ValueError(f"Unknown mode: {mode}")
@@ -26,6 +28,9 @@ def correct_text(text, mode="grammar"):
 
 {text}
 """
+    print("Connecting to Ollama...")
+    print(f"Model: {OLLAMA_MODEL}")
+    print(f"Prompt length: {len(prompt)}")
 
     try:
 
@@ -44,6 +49,7 @@ def correct_text(text, mode="grammar"):
     except Exception as e:
 
         print("\n❌ Ollama Error")
+        print(type(e).__name__)
         print(e)
 
         return None

@@ -4,7 +4,7 @@
 
 # Application
 APP_NAME = "SnapeText"
-VERSION = "0.1.0"
+VERSION = "v0.6.0"
 
 # AI Settings
 GEMINI_MODEL = "gemini-2.5-flash"

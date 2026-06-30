@@ -36,6 +36,8 @@ client = genai.Client(api_key=api_key)
 
 def correct_text(text, mode="grammar"):
 
+    print(f"Using Gemini model: {GEMINI_MODEL}")
+
     # Check whether the requested mode exists
     if mode not in PROMPTS:
         raise ValueError(f"Unknown mode: {mode}")
